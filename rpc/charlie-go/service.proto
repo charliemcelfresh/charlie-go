@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package charlie_go;
+option go_package = "rpc/charlie-go";
+
+service CharlieGo {
+  rpc CreateItem(CreateItemRequest) returns (Item);
+  rpc GetItem(GetItemRequest) returns (Item);
+}
+
+message None {}
+
+message CreateItemRequest {
+  string name = 1; // required
+}
+
+message GetItemRequest {
+  string id = 1;
+}
+
+message Item {
+  string id = 1;
+  string name = 2;
+  string created_at = 3;
+  string updated_at = 4;
+}
