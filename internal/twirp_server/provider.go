@@ -6,7 +6,7 @@ import (
 
 	"github.com/charliemcelfresh/go-by-charlie/internal/config"
 
-	pb "github.com/charliemcelfresh/go-by-charlie/rpc/charlie-go"
+	pb "github.com/charliemcelfresh/go-by-charlie/rpc/charlie_go"
 	"github.com/twitchtv/twirp"
 )
 

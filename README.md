@@ -11,7 +11,7 @@
   * iss: issuer ("charlie.com")
   * aud: audience ("user")
   * user_id: user_id (integer)
-  * 
+  
 ### ChainHooks
 Create as many different `ChainHook` objects as you need. Here we create just one.
 

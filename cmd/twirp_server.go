@@ -3,7 +3,7 @@ package cmd
 import (
 	"net/http"
 
-	charlie_go "github.com/charliemcelfresh/go-by-charlie/rpc/charlie-go"
+	charlie_go "github.com/charliemcelfresh/go-by-charlie/rpc/charlie_go"
 
 	"github.com/charliemcelfresh/go-by-charlie/internal/twirp_server"
 
@@ -32,9 +32,9 @@ func Run() {
 
 	mux := http.NewServeMux()
 
-	// POST http(s)://<host>/go_by_charlie.GoByCharlie/CreateItem
-	// POST http(s)://<host>/go_by_charlie.GoByCharlie/GetItem
-	handler := charlie_go.NewCharlieGoServer(provider, chainHooks)
+	// POST http(s)://<host>/api/v1/charlie_go/CharlieGo/CreateItem
+	// POST http(s)://<host>/api/v1/charlie_go/CharlieGo/GetItem
+	handler := charlie_go.NewCharlieGoServer(provider, twirp.WithServerPathPrefix("/api/v1"), chainHooks)
 	mux.Handle(
 		handler.PathPrefix(), twirp_server.AddJwtTokenToContext(
 			handler,
